@@ -1,5 +1,5 @@
 f<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -22,7 +22,17 @@ f<!DOCTYPE html>
 
   <!-- Custom styles for this template -->
   <link href="css/agency.css" rel="stylesheet">
+    <script>
+        $(document).on("ready", function(){
+            $(".modal").on("shown.bs.modal",function(){
+                $("a.modal-dismiss").click(function(){
+                    modal = $(this).attr("data-target")
+                    $(modal).modal("hide")
+                })
+            })
+        })
 
+    </script>
 </head>
 
 <body id="page-top">
@@ -72,14 +82,15 @@ f<!DOCTYPE html>
     <div class="modal-content" style="background-color:greenyellow">
       <div class="modal-header">
           <img class="mx-auto " src="https://tuapppara.com/wp-content/uploads/2016/03/emojicamara.jpg" alt="">
-<!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--          <button type="button" class="close" data-dismiss="modal">&times;</button>-->
         <h4 class="modal-title">Tu respuesta es:</h4>
       </div>
       <div class="modal-body">
         <p>Correcta.</p>
       </div>
       <div class="modal-footer">
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#pregunta2">siguiente</a>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger modal-dismiss"  href="#pregunta2" data-target="#modalCorrecto1">siguiente</a>
+          
       </div>
     </div>
 
@@ -751,6 +762,7 @@ f<!DOCTYPE html>
                    }
              
           });
+        
   </script>
   
   </body>
