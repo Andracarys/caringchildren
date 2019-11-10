@@ -1,3 +1,5 @@
 whitenoise==3.3.1
 Pillow
+Flask==1.0.2
+gunicorn
 
